@@ -1,45 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Created: 2025/09/18 17:49:48 by jaatif-a          #+#    #+#             */
+/*   Updated: 2025/09/18 18:44:07 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+void	*ft_memcpy(void *dest_s, const void *src_s, size_t n)
 {
-	unsigned char *s;
-	size_t			i;
+	size_t	i;
 
 	i = 0;
-	s = (unsigned char *)str;
-
-	while (i < n)
+	
+	if (dest_s == NULL || src_s == NULL)
+		return (NULL);
+	while (n > i)
 	{
-		s[i] = c;
+		((char *)dest_s)[i] = ((const char *)src_s)[i];
 		i++;
 	}
-	return (str);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main () 
-{
-   char str[50];
-
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
-
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
+	return (dest_s);
 }

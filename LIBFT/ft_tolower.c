@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Created: 2025/09/18 19:03:08 by jaatif-a          #+#    #+#             */
+/*   Updated: 2025/09/18 19:05:57 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+int	ft_tolower(int c)
 {
-	unsigned char *s;
-	size_t			i;
-
-	i = 0;
-	s = (unsigned char *)str;
-
-	while (i < n)
-	{
-		s[i] = c;
-		i++;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
 
+#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 
-int main () 
+int main()
 {
-   char str[50];
+    char ch = 'M';
+    printf("Original Character: %c\n", ch);
+    // convert ch to lowercase
+    ch=ft_tolower(ch);
+    printf("After using tolower: %c", ch);
 
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
-
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
+    return 0;
 }

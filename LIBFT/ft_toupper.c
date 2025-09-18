@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Created: 2025/09/18 18:58:53 by jaatif-a          #+#    #+#             */
+/*   Updated: 2025/09/18 19:02:53 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char *s;
-	size_t			i;
-
-	i = 0;
-	s = (unsigned char *)str;
-
-	while (i < n)
-	{
-		s[i] = c;
-		i++;
-	}
-	return (str);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 
+// C program to demonstrate
+// example of toupper() function.
+#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 
-int main () 
+int main()
 {
-   char str[50];
+    char ch;
 
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
+    ch = 'z';
+    printf("%c in uppercase is represented as %c",
+           ch, ft_toupper(ch));
 
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
+    return 0;
 }

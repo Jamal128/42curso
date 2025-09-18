@@ -6,11 +6,13 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:22:31 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/15 11:25:20 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:10:27 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	if (c != '\0')
 	{
@@ -20,16 +22,4 @@ int	isalpha(int c)
 		}
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char c = '-';
-	if (isalpha(c))
-	{
-		printf("is print");
-	}
-	else
-		printf("no print");
 }

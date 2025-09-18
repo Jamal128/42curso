@@ -6,32 +6,22 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:48:35 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/15 11:19:23 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:17:55 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalnum(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	if (c != '\0')
 	{
-		if (((c >= 'a' && c<= 'z')
+		if (((c >= 'a' && c <= 'z')
 				|| (c >= 'A' && c <= 'Z'))
-					|| (c >= '0' && c <= '9'))
+			|| (c >= '0' && c <= '9'))
 		{
 			return (1);
 		}
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char c = 'g';
-	if (isalnum(c))
-	{
-		printf("is alnum");
-	}
-	else
-		printf("no alnum");
 }

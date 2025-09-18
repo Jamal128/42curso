@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Created: 2025/09/18 19:55:08 by jaatif-a          #+#    #+#             */
+/*   Updated: 2025/09/18 19:55:16 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned char *s;
-	size_t			i;
-
-	i = 0;
-	s = (unsigned char *)str;
-
-	while (i < n)
+	if (n == 0)
+		return (0);
+	while (*s1 == *s2 && n > 1 && *s1)
 	{
-		s[i] = c;
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (str);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main () 
-{
-   char str[50];
-
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
-
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

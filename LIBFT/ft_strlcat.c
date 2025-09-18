@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Created: 2025/09/18 18:54:37 by jaatif-a          #+#    #+#             */
+/*   Updated: 2025/09/18 18:54:58 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned char *s;
-	size_t			i;
+	size_t	i;
+	size_t	dest_len;
+	size_t	src_len;
 
 	i = 0;
-	s = (unsigned char *)str;
-
-	while (i < n)
+	dest_len = 0;
+	src_len = 0;
+	while (dest[dest_len] && dest_len < size)
+		dest_len++;
+	while (src[src_len])
+		src_len++;
+	if (dest_len >= size)
+		return (size + src_len);
+	while (src[i] && (i + dest_len + 1 < size))
 	{
-		s[i] = c;
+		dest[dest_len + i] = src[i];
 		i++;
 	}
-	return (str);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main () 
-{
-   char str[50];
-
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
-
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
+	if (dest_len + i < size)
+		dest[dest_len + i] = '\0';
+	return (src_len + dest_len);
 }

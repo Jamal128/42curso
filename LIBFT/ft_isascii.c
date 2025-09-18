@@ -6,11 +6,13 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:15:41 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/15 11:21:40 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:18:08 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
 	if (c != '\0')
 	{
@@ -20,16 +22,4 @@ int	isalpha(int c)
 		}
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char c = '0';
-	if (isalpha(c))
-	{
-		printf("is ascii");
-	}
-	else
-		printf("no ascii");
 }

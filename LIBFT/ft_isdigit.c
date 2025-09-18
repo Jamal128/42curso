@@ -6,30 +6,20 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:44:13 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/15 11:10:21 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/18 17:14:45 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int n)
+#include "libft.h"
+
+int	ft_isdigit(int n)
 {
 	if (n != '\0')
 	{
-		if (n >= '0' && n<= '9')
+		if (n >= '0' && n <= '9')
 		{
 			return (1);
 		}
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int	main()
-{
-	char c = 'c';
-	if (isdigit(c))
-	{
-		printf("is digit");
-	}
-	else
-		printf("no digit");
 }
