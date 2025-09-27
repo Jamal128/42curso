@@ -6,13 +6,13 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 19:55:08 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 19:55:16 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/27 19:46:34 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
 		return (0);

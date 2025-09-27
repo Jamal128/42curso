@@ -6,7 +6,7 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:58:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/24 16:41:38 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/27 19:42:15 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,4 @@ void	*ft_memmove(void *dest_s, const void *src_s, size_t n)
 		d[n] = s[n];
 	}
 	return (d);
-}
-
-#include <stdio.h> 
-#include <string.h> 
-
-int main() 
-{ 
-	char dest_str[] = "Tutorialspoint"; 
-	char src_str[] = "Tutors";
-
-	puts("source string [src_str] before memmove:-"); 
-	puts(dest_str); 
-
-	/* Copies contents from source to destination */
-	ft_memmove(dest_str, src_str, sizeof(src_str)); 
-
-	puts("\nsource string [src_str] after memmove:-"); 
-	puts(dest_str); 
-	return 0; 
 }

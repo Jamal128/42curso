@@ -6,7 +6,7 @@
 /*   By: jaatif-a <jamalch2468@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 16:51:40 by jaatif-a          #+#    #+#             */
-/*   Updated: 2025/09/18 17:33:34 by jaatif-a         ###   ########.fr       */
+/*   Updated: 2025/09/27 19:42:19 by jaatif-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,4 @@ void *ft_memset(void *str, int c, size_t n)
 		i++;
 	}
 	return (str);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main () 
-{
-   char str[50];
-
-   strcpy(str, "Welcome to Tutorialspoint");
-   puts(str);
-
-   ft_memset(str, '#', 7);
-   puts(str);
-   
-   return(0);
 }
